@@ -25,6 +25,22 @@ namespace MusicMall
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            /****************************************** Admin 资源 ****************************************************/
+
+            //js
+            bundles.Add(new ScriptBundle("~/js/xadmin").Include("~/Areas/Admin/Content/js/xadmin.js"));
+            bundles.Add(new ScriptBundle("~/js/xcity").Include("~/Areas/Admin/Content/js/xcity.js"));
+
+            //css
+            bundles.Add(new StyleBundle("~/css/font").Include("~/Areas/Admin/Content/css/font.css"));
+            bundles.Add(new StyleBundle("~/css/xadmin").Include("~/Areas/Admin/Content/css/xadmin.css"));
+
+            //layer
+            bundles.Add(new ScriptBundle("~/js/layer").Include("~/Areas/Admin/Content/lib/layui/layui.js"));
+
+            /****************************************** END *********************************************************/
+
         }
     }
 }
