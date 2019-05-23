@@ -7,6 +7,7 @@ using MusicMall.Controllers;
 using MusicMall.Models;
 using MusicMall.Common;
 using MusicMall.Areas.Admin.Models;
+using System.Configuration;
 
 namespace MusicMall.Areas.Admin.Controllers
 {
@@ -23,14 +24,22 @@ namespace MusicMall.Areas.Admin.Controllers
         {
             var test = Request.Params;
 
-            string pwd = Common.Common.EncryptionPassword(password, "123");
+            string pwd = Common.Common.EncryptionPassword(password, ConfigurationSettings.AppSettings["salt"]);
             var admin = db.t_admin.Where(w => w.name == username && w.password == pwd);
             if (admin.Count() == 1)
             {
-                Session.Add("username", admin.First().name);
+                t_admin data = admin.First();
+                Session.Add("username", data.name);
+                Session.Add("userid", data.id);
                 return Json( new JsonData(state : "ok"));
             }
             return Json(new JsonData(state: "no", message: "用户名或密码错误！", errorCode : 1000001));
+        }
+
+        public ActionResult SignOut()
+        {
+            Session.Clear();
+            return RedirectToAction("index");
         }
     }
 }

@@ -129,9 +129,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Infrastructure\PowerAuthAttribute.cs" />
     <Compile Include="Areas\Admin\Models\JsonData.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
@@ -287,6 +289,7 @@
     <Content Include="Areas\Admin\Views\Shared\FooterPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Welcome.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Edit.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -312,7 +315,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\User\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Home\Views\Home\" />
     <Folder Include="Areas\Home\Views\Shared\" />
