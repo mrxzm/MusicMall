@@ -13,5 +13,10 @@ namespace MusicMall.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public ActionResult Welcome()
+        {
+            return View();
+        }
     }
 }

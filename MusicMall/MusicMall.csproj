@@ -260,6 +260,10 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\TopPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\LeftPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\FooterPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Welcome.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

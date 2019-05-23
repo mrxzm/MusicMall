@@ -37,7 +37,7 @@ namespace MusicMall
             bundles.Add(new StyleBundle("~/css/xadmin").Include("~/Areas/Admin/Content/css/xadmin.css"));
 
             //layer
-            bundles.Add(new ScriptBundle("~/js/layer").Include("~/Areas/Admin/Content/lib/layui/layui.js"));
+            bundles.Add(new ScriptBundle("~/js/layui").Include("~/Areas/Admin/Content/lib/layui/layui.js"));
 
             /****************************************** END *********************************************************/
 
