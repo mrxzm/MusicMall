@@ -290,6 +290,7 @@
     <Content Include="Areas\Admin\Views\Home\Welcome.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -314,8 +315,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\User\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Home\Views\Home\" />
     <Folder Include="Areas\Home\Views\Shared\" />
