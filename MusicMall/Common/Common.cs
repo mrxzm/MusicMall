@@ -49,7 +49,11 @@ namespace MusicMall.Common
                     {
                         if (dp.Name == sp.Name && dp.PropertyType == sp.PropertyType && dp.Name != "Error" && dp.Name != "Item")//判断属性名是否相同  
                         {
-                            dp.SetValue(d, sp.GetValue(s, null), null);//获得s对象属性的值复制给d对象的属性  
+                            var value = sp.GetValue(s, null);
+                            if (value != null && value.ToString() != "" && DateTime.MinValue != value as DateTime?) //过滤空数据
+                            {
+                                dp.SetValue(d, value, null);//获得s对象属性的值复制给d对象的属性 
+                            }
                         }
                     }
                 }

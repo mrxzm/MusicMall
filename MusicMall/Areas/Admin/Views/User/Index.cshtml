@@ -1,14 +1,18 @@
-﻿
+﻿@using MusicMall.Models;
+@using System.Configuration;
+@model List<MusicMall.Models.t_user>
+
 @{
     ViewBag.Title = "Index";
+
 }
 
 <div class="x-nav">
     <span class="layui-breadcrumb">
         <a href="@Url.Action("welcome", "Home")">首页</a>
-        <a href="">管理员列表</a>
+        <a href="">用户列表</a>
         <a>
-            <cite>管理员列表</cite>
+            <cite>用户列表</cite>
         </a>
     </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
@@ -17,15 +21,15 @@
 </div>
 <div class="x-body">
     <div class="layui-row">
-        <form class="layui-form layui-col-md12 x-so">
-            <input type="text" name="keyword" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+        <form id="screenForm" class="layui-form layui-col-md12 x-so" action="@Url.Action("index")">
+            <input type="text" name="keyword" placeholder="请输入用户名" autocomplete="off" class="layui-input" value="@ViewBag.keyword">
             <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
         </form>
     </div>
     <xblock>
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-        <button class="layui-btn" onclick="x_admin_show('添加用户','./admin-add.html')"><i class="layui-icon"></i>添加</button>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
+        <button class="layui-btn" onclick="x_admin_show('添加用户','@Url.Action("Create")')"><i class="layui-icon"></i>添加</button>
+        <span class="x-right" style="line-height:40px">共有数据：@ViewBag.page.Count 条</span>
     </xblock>
     <table class="layui-table">
         <thead>
@@ -49,60 +53,52 @@
             {
                 <tr>
                     <td>
-                        <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+                        <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='@item.id'><i class="layui-icon">&#xe605;</i></div>
                     </td>
                     <td>@item.name</td>
                     <td>@item.phone</td>
-                    <td>@(item.role == 1 ? "普通用户" : "未知")</td>
-                    <td>@()</td>
-                    <td>2.5%</td>
-                    <td></td>
-                    <td>2017-01-01 11:11:42</td>
+                    <td>@(EnumConfig.Role[item.role])</td>
+                    <td>@EnumConfig.Sex[item.sex.Value]</td>
+                    <td>@item.age 岁</td>
+                    <td>@item.loginCount 次</td>
+                    <td>@item.loginTime</td>
+                    <td>@item.createTime</td>
                     <td class="td-status">
-                        <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>
+                        @if (item.status)
+                        {
+                            <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>
+                        }
+                        else
+                        {
+                            <span class="layui-btn layui-btn-normal layui-btn-mini layui-btn-disabled">已停用</span>
+                        }
                     </td>
                     <td class="td-manage">
-                        <a onclick="member_stop(this,'10001')" href="javascript:;" title="启用">
-                            <i class="layui-icon">&#xe601;</i>
-                        </a>
-                        <a title="编辑" onclick="x_admin_show('编辑','admin-edit.html')" href="javascript:;">
+                        @if (item.status)
+                        {
+                            <a onclick="member_stop(this,@item.id)" href="javascript:;" title="停用">
+                                <i class="layui-icon">&#xe601;</i>
+                            </a>
+                        }
+                        else
+                        {
+                            <a onclick="member_stop(this,@item.id)" href="javascript:;" title="启用">
+                                <i class="layui-icon">&#xe62f;</i>
+                            </a>
+                        }
+
+                        <a title="编辑" onclick="x_admin_show('编辑','@Url.Action("Edit", new { id = item.id})')" href="javascript:;">
                             <i class="layui-icon">&#xe642;</i>
                         </a>
-                        <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
+                        <a title="删除" onclick="member_del(this,@item.id)" href="javascript:;">
                             <i class="layui-icon">&#xe640;</i>
                         </a>
                     </td>
                 </tr>
             }
-            <tr>
-                <td>
-                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-                </td>
-                <td>admin</td>
-                <td>18925139194</td>
-                <td>管理员</td>
-                <td>10002012345</td>
-                <td>2.5%</td>
-                <td></td>
-                <td>2017-01-01 11:11:42</td>
-                <td class="td-status">
-                    <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>
-                </td>
-                <td class="td-manage">
-                    <a onclick="member_stop(this,'10001')" href="javascript:;" title="启用">
-                        <i class="layui-icon">&#xe601;</i>
-                    </a>
-                    <a title="编辑" onclick="x_admin_show('编辑','admin-edit.html')" href="javascript:;">
-                        <i class="layui-icon">&#xe642;</i>
-                    </a>
-                    <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                        <i class="layui-icon">&#xe640;</i>
-                    </a>
-                </td>
-            </tr>
         </tbody>
     </table>
-    <div class="page">
+    <div class="page" id="page">
         <div>
             <a class="prev" href="">&lt;&lt;</a>
             <a class="num" href="">1</a>
@@ -114,39 +110,65 @@
     </div>
 </div>
 <script>
-    layui.use('laydate', function () {
-        var laydate = layui.laydate;
 
-        //执行一个laydate实例
-        laydate.render({
-          elem: '#start' //指定元素
-        });
+    //分页
+    $(function () {
 
-        //执行一个laydate实例
-        laydate.render({
-          elem: '#end' //指定元素
+        layui.use('laypage', function () {
+            var laypage = layui.laypage;
+
+            //执行一个laypage实例
+            laypage.render({
+                elem: 'page',
+                limit: @ConfigurationSettings.AppSettings["pageSize"] ,
+                count: @ViewBag.page.Count , //数据总数，从服务端得到
+                curr: @ViewBag.page.PageNum ,
+                jump: function (obj, first) {
+                    if (!first) {
+                        var url = "?pageSize=" + obj.limit;
+                        url += "&pageNum=" + obj.curr;
+                        url += "&" + $("#screenForm").serialize();
+
+                        location.href = '@Url.Action("index", "user")' + url;
+                    }
+                }
+            });
         });
-      });
+    });
 
        /*用户-停用*/
       function member_stop(obj,id){
-          layer.confirm('确认要停用吗？',function(index){
+          layer.confirm('确认要' + $(obj).attr('title') +'吗？',function(index){
 
               if($(obj).attr('title')=='启用'){
 
-                //发异步把用户状态进行更改
-                $(obj).attr('title','停用')
-                $(obj).find('i').html('&#xe62f;');
+                  //发异步把用户状态进行更改
+                  $.post('@Url.Action("status")', { "id": id, "status": true }, function (result) {
+                      if (result.State == "ok") {
+                          $(obj).attr('title', '停用')
+                          $(obj).find('i').html('&#xe601;');
 
-                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
-                layer.msg('已停用!',{icon: 5,time:1000});
+                          $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
+                          layer.msg('已启用!', { icon: 6, time: 1000 });
+                      }
+                      else {
+                          layer.msg(result.Message, { icon: 5, time: 1000 });
+                      }
+                  });
+              } else {
+                  $.post('@Url.Action("status")', { "id": id, "status": false }, function (result) {
+                      if (result.State == "ok") {
+                          $(obj).attr('title', '启用')
+                          $(obj).find('i').html('&#xe62f;');
 
-              }else{
-                $(obj).attr('title','启用')
-                $(obj).find('i').html('&#xe601;');
-
-                $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
-                layer.msg('已启用!',{icon: 5,time:1000});
+                          $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
+                          layer.msg('已停用!', { icon: 5, time: 1000 });
+                      }
+                      else {
+                          layer.msg(result.Message, { icon: 5, time: 1000 });
+                      }
+                      
+                  });
               }
 
           });
@@ -156,8 +178,18 @@
       function member_del(obj,id){
           layer.confirm('确认要删除吗？',function(index){
               //发异步删除数据
-              $(obj).parents("tr").remove();
-              layer.msg('已删除!',{icon:1,time:1000});
+              $.post('@Url.Action("Delete")', { "id": id }, function (result) {
+                  if (result.State == "ok") {
+                      $(obj).parents("tr").remove();
+                      layer.msg('已删除!', { icon: 1, time: 1000 });
+                  }
+                  else
+                  {
+                      layer.msg(result.Message, { icon: 5, time: 1000 });
+                  }
+                  
+              });
+              
           });
       }
 
@@ -169,9 +201,17 @@
 
         layer.confirm('确认要删除吗？'+data,function(index){
             //捉到所有被选中的，发异步进行删除
-            layer.msg('删除成功', {icon: 1});
-            $(".layui-form-checked").not('.header').parents('tr').remove();
+            $.post('@Url.Action("DeleteAll")', { "ids": data }, function (result) {
+                if (result.State == "ok") {
+                    layer.msg('删除成功', { icon: 1 });
+                    $(".layui-form-checked").not('.header').parents('tr').remove();
+                }
+                else {
+                    layer.msg(result.Message, { icon: 5, time: 1000 });
+                }
+            });
+            
         });
     }
-    </script>
+</script>
 

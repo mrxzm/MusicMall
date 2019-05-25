@@ -11,84 +11,93 @@ namespace MusicMall.Areas.Admin.Controllers
 {
     public class UserController : BaseController
     {
-        // GET: Admin/User
-        public ActionResult Index(int pageNum = 0, int pageSize = 30, string keyword = "")
+        // GET: User/User
+        public ActionResult Index(int pageNum = 1, int pageSize = 20, string keyword = "")
         {
-            IQueryable < t_admin > iq = db.t_admin;
+            IQueryable < t_user > iq = db.t_user;
+            ViewBag.keyword = keyword;
             if (keyword != "")
             {
-                keyword = "%" + keyword + "%";
-                iq.Where(w => w.name == keyword);
+                iq = iq.Where(w => w.name.Contains(keyword));
             }
-            if (pageNum != 0)
-            {
-                pageNum--;
-            }
-            var users = iq.OrderBy(o => o.id).Skip(pageNum * pageSize).Take(pageSize).ToList();
+            int count = iq.Count();
+            var users = iq.OrderBy(o => o.id).Skip((pageNum - 1) * pageSize).Take(pageSize).ToList();
+            
+            ViewBag.page = new PageModel(count, pageSize, pageNum);
             return View(users);
         }
 
-        // GET: Admin/User/Details/5
+        // GET: User/User/Details/5
         public ActionResult Details(int id)
         {
-            var user = db.t_admin.Find(id);
+            var user = db.t_user.Find(id);
             return View(user);
         }
 
-        // GET: Admin/User/Create
+        // GET: User/User/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/User/Create
+        // POST: User/User/Create
         [HttpPost]
-        public ActionResult Create(t_admin admin)
+        public ActionResult Create(t_user user)
         {
             try
             {
-                db.t_admin.Add(admin);
+                //补充数据
+                user.password = Common.Common.EncryptionPassword(user.password, ConfigurationSettings.AppSettings["salt"]);
+                user.loginCount = 1;
+                user.loginTime = DateTime.Now;
+                user.loginIp = Request.UserHostAddress;
+                user.createTime = DateTime.Now;
+                user.updateTime = DateTime.Now;
+
+                db.t_user.Add(user);
                 db.SaveChanges();
                 return Json(new JsonData("ok"));
             }
             catch
             {
-                return Json(new JsonData("no", "创建失败！"));
+                return Json(new JsonData("no", message: "创建失败！"));
             }
         }
 
-        // GET: Admin/User/Edit/5
+        // GET: User/User/Edit/5
         public ActionResult Edit(int id)
         {
-            var user = db.t_admin.Find(id);
+            var user = db.t_user.Find(id);
             return View(user);
         }
 
-        // POST: Admin/User/Edit/5
+        // POST: User/User/Edit/5
         [HttpPost]
-        public ActionResult Edit(t_admin admin)
+        public ActionResult Edit(t_user user)
         {
+            var data = db.t_user.Where(w => w.id == user.id).First();
+            data = Common.Common.MapperToModel<t_user, t_user>(data, user);
+            data.updateTime = DateTime.Now;
+            db.SaveChanges();
             try
             {
-                var data = db.t_admin.Where(w => w.id == admin.id).First();
-                data = Common.Common.MapperToModel<t_admin, t_admin>(admin, data);
-                db.SaveChanges();
+                
                 return Json(new JsonData("ok"));
             }
             catch
             {
-                return Json(new JsonData("no", "创建失败！"));
+                return Json(new JsonData("no", message:"修改失败！"));
             }
         }
 
-        // POST: Admin/User/Delete/5
+        // POST: User/User/Delete/5
         [HttpPost]
         public ActionResult Delete(int id)
         {
             try
             {
-                var admin = db.t_admin.Find(id);
-                db.t_admin.Remove(admin);
+                var user = db.t_user.Find(id);
+                db.t_user.Remove(user);
                 db.SaveChanges();
                 return Json(new JsonData("ok"));
             }
@@ -99,21 +108,16 @@ namespace MusicMall.Areas.Admin.Controllers
             }
         }
 
-        // POST: Admin/User/DeleteAll/5/3
+        // POST: User/User/DeleteAll/5,3
         [HttpPost]
-        public ActionResult DeleteAll(params int[] ids)
+        public ActionResult DeleteAll(string ids)
         {
             try
             {
                 // 字符串形式 in(1,2,3,4,5) ids == string
-                //var admins = db.t_admin.Where(w => ids.Contains(w.id));
-                //db.t_admin.RemoveRange(admins);
-                
-                foreach (var item in ids)
-                {
-                    var admin = db.t_admin.Find(item);
-                    db.t_admin.Remove(admin);
-                }
+                int[] intIds = ids.Split(',').Select(int.Parse).ToArray();
+                var users = db.t_user.Where(w => intIds.Contains(w.id));
+                db.t_user.RemoveRange(users);
                 db.SaveChanges();
                 return Json(new JsonData("ok"));
             }
@@ -122,5 +126,22 @@ namespace MusicMall.Areas.Admin.Controllers
                 return Json(new JsonData("no", message: "删除失败！"));
             }
         }
+
+        [HttpPost]
+        public ActionResult Status(int id, bool status)
+        {
+            try
+            {
+                t_user user = db.t_user.First(w => w.id == id);
+                user.status = status;
+                db.SaveChanges();
+                return Json(new JsonData("ok"));
+            }
+            catch
+            {
+                return Json(new JsonData("no", message: "更改失败！"));
+            }
+        }
+
     }
 }

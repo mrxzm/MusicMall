@@ -38,6 +38,9 @@ namespace MusicMall
 
             //layer
             bundles.Add(new ScriptBundle("~/js/layui").Include("~/Areas/Admin/Content/lib/layui/layui.js"));
+            //E:\webTest\MusicMall\MusicMall\Areas\Admin\Content\lib\layui\lay\modules\laypage.js
+            //bundles.Add(new ScriptBundle("~/js/laypage").Include("~/Areas/Admin/Content/lib/layui/lay/modules/laypage.js"));
+            
 
             /****************************************** END *********************************************************/
 
