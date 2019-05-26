@@ -40,10 +40,10 @@ namespace MusicMall.Models
         /// <summary>
         /// 是 or 否
         /// </summary>
-        public static Dictionary<int, string> YesNo = new Dictionary<int, string>
+        public static Dictionary<bool, string> YesNo = new Dictionary<bool, string>
         {
-            { 0, "否"},
-            { 1, "是"}
+            { false, "否"},
+            { true, "是"}
         };
 
         /// <summary>
