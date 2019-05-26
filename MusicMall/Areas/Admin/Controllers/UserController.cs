@@ -110,14 +110,19 @@ namespace MusicMall.Areas.Admin.Controllers
 
         // POST: User/User/DeleteAll/5,3
         [HttpPost]
-        public ActionResult DeleteAll(string ids)
+        public ActionResult DeleteAll(params int[] ids)
         {
             try
             {
                 // 字符串形式 in(1,2,3,4,5) ids == string
-                int[] intIds = ids.Split(',').Select(int.Parse).ToArray();
-                var users = db.t_user.Where(w => intIds.Contains(w.id));
-                db.t_user.RemoveRange(users);
+                //int[] intIds = ids.Split(',').Select(int.Parse).ToArray();
+                //var users = db.t_user.Where(w => intIds.Contains(w.id));
+                //db.t_user.RemoveRange(users);
+                foreach (var item in ids)
+                {
+                    var user = db.t_user.Find(item);
+                    db.t_user.Remove(user);
+                }
                 db.SaveChanges();
                 return Json(new JsonData("ok"));
             }
