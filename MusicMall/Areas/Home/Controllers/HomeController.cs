@@ -11,7 +11,7 @@ namespace MusicMall.Areas.Home.Controllers
         // GET: Home/Home
         public ActionResult Index()
         {
-            return View("test");
+            return View("test"); ;
         }
     }
 }
