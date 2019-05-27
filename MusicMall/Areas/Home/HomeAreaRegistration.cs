@@ -17,7 +17,7 @@ namespace MusicMall.Areas.Home
             context.MapRoute(
                 "Home_default",
                 "Home/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", controller = "Home", id = UrlParameter.Optional }
             );
         }
     }
