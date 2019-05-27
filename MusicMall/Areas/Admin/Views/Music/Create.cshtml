@@ -1,0 +1,101 @@
+﻿@using MusicMall.Models;
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="x-body">
+    <form class="layui-form">
+
+        <div class="layui-form-item">
+            <label for="name" class="layui-form-label">
+                <span class="x-red">*</span>单曲名
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="name" name="name" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <label for="L_type" class="layui-form-label">
+                <span class="x-red">*</span>支付类型
+            </label>
+            <div class="layui-input-inline">
+                <select name="type">
+                    <option value="微信">微信</option>
+                    <option value="支付宝">支付宝</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="x-red">*</span>用户状态</label>
+            <div class="layui-input-inline">
+                <select name="status">
+                    @foreach (var item in EnumConfig.Status)
+                    {
+                        <option value="@item.Key.ToString()">@item.Value</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_repass" class="layui-form-label">
+            </label>
+            <button class="layui-btn" lay-filter="add" lay-submit="">
+                增加
+            </button>
+        </div>
+
+    </form>
+</div>
+<script>
+layui.use(['form','layer'], function(){
+            $ = layui.jquery;
+          var form = layui.form
+          ,layer = layui.layer;
+
+          //自定义验证规则
+          form.verify({
+            nikename: function(value){
+              if(value.length < 5){
+                return '昵称至少得5个字符啊';
+              }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,repass: function(value){
+                if($('#L_pass').val()!=$('#L_repass').val()){
+                    return '两次密码不一致';
+                }
+            }
+          });
+
+          //监听提交
+          form.on('submit(add)', function(data){
+            console.log(data);
+              //发异步
+              $.post('@Url.Action("create")', data.field, function (result) {
+                  if (result.State == "ok") {
+                      layer.alert("增加成功", { icon: 6 }, function () {
+                          // 获得frame索引
+                          var index = parent.layer.getFrameIndex(window.name);
+                          //关闭当前frame
+                          parent.layer.close(index);
+                      });
+                  }
+                  else {
+                      layer.alert(result.Message, { icon: 6 }, function (index) {
+                          layer.close(index);
+                      });
+                  }
+              });
+
+
+            return false;
+          });
+
+
+        });</script>
+
