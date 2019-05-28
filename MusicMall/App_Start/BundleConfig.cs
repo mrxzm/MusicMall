@@ -23,8 +23,7 @@ namespace MusicMall
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.css"));
 
             /****************************************** Admin 资源 ****************************************************/
 
@@ -40,8 +39,23 @@ namespace MusicMall
             bundles.Add(new ScriptBundle("~/js/layui").Include("~/Areas/Admin/Content/lib/layui/layui.js"));
             //E:\webTest\MusicMall\MusicMall\Areas\Admin\Content\lib\layui\lay\modules\laypage.js
             //bundles.Add(new ScriptBundle("~/js/laypage").Include("~/Areas/Admin/Content/lib/layui/lay/modules/laypage.js"));
-            
 
+
+            /****************************************** END *********************************************************/
+
+
+            /****************************************** Home 资源 ****************************************************/
+
+            //js
+
+            //css
+            bundles.Add(new StyleBundle("~/css/theme").Include("~/Areas/Home/Content/css/style.css"));
+            bundles.Add(new StyleBundle("~/css/font").Include("~/Areas/Home/Content/css/font-awesome.css"));
+
+            //chocolat
+            bundles.Add(new ScriptBundle("~/js/chocolat").Include("~/Areas/Home/Content/js/jquery.chocolat.js"));
+            bundles.Add(new StyleBundle("~/css/chocolat").Include("~/Areas/Home/Content/css/chocolat.css"));
+            
             /****************************************** END *********************************************************/
 
         }
