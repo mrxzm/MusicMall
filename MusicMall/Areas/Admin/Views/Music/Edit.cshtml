@@ -1,5 +1,5 @@
 ﻿@using MusicMall.Models;
-@model MusicMall.Models.t_pay
+@model MusicMall.Models.t_music
 @{
     ViewBag.Title = "Edit";
 }
@@ -9,12 +9,12 @@
     <form class="layui-form">
         <input type="hidden" value="@Model.id" />
         <div class="layui-form-item">
-            <label for="price" class="layui-form-label">
+            <label for="name" class="layui-form-label">
                 <span class="x-red">*</span>名称
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="price" name="price" required="" lay-verify="nubmer"
-                       autocomplete="off" class="layui-input" value="@Model.price">
+                <input type="text" id="name" name="name" required="" lay-verify="nubmer"
+                       autocomplete="off" class="layui-input" value="@Model.name">
             </div>
             <div class="layui-form-mid layui-word-aux">
                 <span class="x-red">*</span>登陆账号
