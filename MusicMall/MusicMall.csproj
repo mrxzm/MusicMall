@@ -354,6 +354,7 @@
     <Content Include="Areas\Home\Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Areas\Home\Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Areas\Home\Content\fonts\FontAwesome.otf" />
+    <Content Include="App_Code\CommonHelpers.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -378,9 +379,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Home\Models\" />
   </ItemGroup>
