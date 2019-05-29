@@ -346,6 +346,7 @@
     <Content Include="Areas\Admin\Views\Pay\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Music\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Music\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Music\Edit.cshtml" />
     <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Home\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Home\Views\Home\Index.cshtml" />
