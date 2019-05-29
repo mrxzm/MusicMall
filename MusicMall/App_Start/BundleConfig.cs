@@ -47,10 +47,12 @@ namespace MusicMall
             /****************************************** Home 资源 ****************************************************/
 
             //js
+            bundles.Add(new ScriptBundle("~/js/classie").Include("~/Areas/Home/Content/js/classie.js"));
+            bundles.Add(new ScriptBundle("~/js/uisearch").Include("~/Areas/Home/Content/js/uisearch.js"));
 
             //css
             bundles.Add(new StyleBundle("~/css/theme").Include("~/Areas/Home/Content/css/style.css"));
-            bundles.Add(new StyleBundle("~/css/font").Include("~/Areas/Home/Content/css/font-awesome.css"));
+            bundles.Add(new StyleBundle("~/css/font-awesome").Include("~/Areas/Home/Content/css/font-awesome.css"));
 
             //chocolat
             bundles.Add(new ScriptBundle("~/js/chocolat").Include("~/Areas/Home/Content/js/jquery.chocolat.js"));
