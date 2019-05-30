@@ -134,8 +134,9 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MusicController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\PayController.cs" />
-    <Compile Include="Areas\Admin\Controllers\singerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SingerController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Infrastructure\PowerAuthAttribute.cs" />
     <Compile Include="Areas\Admin\Models\JsonData.cs" />
@@ -150,7 +151,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\EF.cs" />
+    <Compile Include="Models\EfContext.cs" />
     <Compile Include="Models\EnumConfig.cs" />
     <Compile Include="Models\t_admin.cs" />
     <Compile Include="Models\t_config.cs" />
@@ -363,10 +364,12 @@
     <Content Include="Areas\Home\Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Areas\Home\Content\fonts\FontAwesome.otf" />
     <Content Include="App_Code\CommonHelpers.cshtml" />
-    <Content Include="Areas\Admin\Views\singer\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Singer\Index.cshtml" />
     <Content Include="Areas\Home\Views\Shared\FooterPartial.cshtml" />
     <Content Include="Areas\Home\Views\Shared\BannerPartial.cshtml" />
     <Content Include="Areas\Home\Views\Musics\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Singer\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -378,6 +381,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="UploadFiles\images\160x160.png" />
     <Content Include="UploadFiles\videos\Av1989613.mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -397,7 +401,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Home\Models\" />
-    <Folder Include="UploadFiles\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

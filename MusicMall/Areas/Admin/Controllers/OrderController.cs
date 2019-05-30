@@ -2,23 +2,22 @@
 using MusicMall.Models;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace MusicMall.Areas.Admin.Controllers
 {
-    public class SingerController : BaseController
+    public class OrderController : BaseController
     {
-        // GET: Singer/Singer
+        // GET: Order/Order
         public ActionResult Index(int pageNum = 1, int pageSize = 20, string keyword = "")
         {
-            IQueryable<t_singer> iq = db.t_singer;
+            IQueryable<t_order> iq = db.t_order;
             ViewBag.keyword = keyword;
             if (keyword != "")
             {
-                iq = iq.Where(w => w.name.Contains(keyword));
+                iq = iq.Where(w => w.orderno.Contains(keyword));
             }
             int count = iq.Count();
             var users = iq.OrderBy(o => o.id).Skip((pageNum - 1) * pageSize).Take(pageSize).ToList();
@@ -27,51 +26,26 @@ namespace MusicMall.Areas.Admin.Controllers
             return View(users);
         }
 
-        // GET: Singer/Singer/Details/5
+        // GET: Order/Order/Details/5
         public ActionResult Details(int id)
         {
-            var singer = db.t_singer.Find(id);
-            return View(singer);
+            var srder = db.t_order.Find(id);
+            return View(srder);
         }
 
-        // GET: Singer/Singer/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Singer/Singer/Create
-        [HttpPost]
-        public ActionResult Create(t_singer singer)
-        {
-            try
-            {
-                //补充数据
-                singer.updateTime = DateTime.Now;
-
-                db.t_singer.Add(singer);
-                db.SaveChanges();
-                return Json(new JsonData("ok"));
-            }
-            catch
-            {
-                return Json(new JsonData("no", message: "创建失败！"));
-            }
-        }
-
-        // GET: Singer/Singer/Edit/5
+        // GET: Order/Order/Edit/5
         public ActionResult Edit(int id)
         {
-            var singer = db.t_singer.Find(id);
-            return View(singer);
+            var srder = db.t_order.Find(id);
+            return View(srder);
         }
 
-        // POST: Singer/Singer/Edit/5
+        // POST: Order/Order/Edit/5
         [HttpPost]
-        public ActionResult Edit(t_singer singer)
+        public ActionResult Edit(t_order srder)
         {
-            var data = db.t_singer.Where(w => w.id == singer.id).First();
-            data = Common.Common.MapperToModel<t_singer, t_singer>(data, singer);
+            var data = db.t_order.Where(w => w.id == srder.id).First();
+            data = Common.Common.MapperToModel<t_order, t_order>(data, srder);
             data.updateTime = DateTime.Now;
             db.SaveChanges();
             try
@@ -85,14 +59,14 @@ namespace MusicMall.Areas.Admin.Controllers
             }
         }
 
-        // POST: Singer/Singer/Delete/5
+        // POST: Order/Order/Delete/5
         [HttpPost]
         public ActionResult Delete(int id)
         {
             try
             {
-                var singer = db.t_singer.Find(id);
-                db.t_singer.Remove(singer);
+                var srder = db.t_order.Find(id);
+                db.t_order.Remove(srder);
                 db.SaveChanges();
                 return Json(new JsonData("ok"));
             }
@@ -103,7 +77,7 @@ namespace MusicMall.Areas.Admin.Controllers
             }
         }
 
-        // POST: Singer/Singer/DeleteAll/5,3
+        // POST: Order/Order/DeleteAll/5,3
         [HttpPost]
         public ActionResult DeleteAll(params int[] ids)
         {
@@ -111,12 +85,12 @@ namespace MusicMall.Areas.Admin.Controllers
             {
                 // 字符串形式 in(1,2,3,4,5) ids == string
                 //int[] intIds = ids.Split(',').Select(int.Parse).ToArray();
-                //var users = db.t_singer.Where(w => intIds.Contains(w.id));
-                //db.t_singer.RemoveRange(users);
+                //var users = db.t_order.Where(w => intIds.Contains(w.id));
+                //db.t_order.RemoveRange(users);
                 foreach (var item in ids)
                 {
-                    var singer = db.t_singer.Find(item);
-                    db.t_singer.Remove(singer);
+                    var srder = db.t_order.Find(item);
+                    db.t_order.Remove(srder);
                 }
                 db.SaveChanges();
                 return Json(new JsonData("ok"));
@@ -132,8 +106,8 @@ namespace MusicMall.Areas.Admin.Controllers
         {
             try
             {
-                t_singer singer = db.t_singer.First(w => w.id == id);
-                singer.status = status;
+                t_order srder = db.t_order.First(w => w.id == id);
+                srder.status = status;
                 db.SaveChanges();
                 return Json(new JsonData("ok"));
             }

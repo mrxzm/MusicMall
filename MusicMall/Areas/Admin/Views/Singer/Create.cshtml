@@ -1,0 +1,240 @@
+﻿@using MusicMall.Models;
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="x-body">
+    <form class="layui-form">
+
+        <div class="layui-form-item">
+            <label for="name" class="layui-form-label">
+                <span class="x-red">*</span>姓名
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="name" name="name" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="stageName" class="layui-form-label">
+                <span class="x-red">*</span>艺名
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="stageName" name="stageName" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_sex" class="layui-form-label">
+                <span class="x-red">*</span>性别
+            </label>
+            <div class="layui-input-inline">
+                <select name="sex">
+                    @foreach (var item in EnumConfig.Sex)
+                    {
+                        <option value="@item.Key">@item.Value</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="nationality" class="layui-form-label">
+                <span class="x-red">*</span>国籍
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="nationality" name="nationality" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="ntion" class="layui-form-label">
+                <span class="x-red">*</span>民族
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="ntion" name="ntion" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="constellation" class="layui-form-label">
+                <span class="x-red">*</span>星座
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="constellation" name="constellation" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="bloodType" class="layui-form-label">
+                <span class="x-red">*</span>血型
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="bloodType" name="bloodType" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="height" class="layui-form-label">
+                <span class="x-red">*</span>身高
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="height" name="height" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="birthday" class="layui-form-label">
+                <span class="x-red">*</span>出生日期
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="birthday" name="birthday" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="occupation" class="layui-form-label">
+                <span class="x-red">*</span>职业
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="occupation" name="occupation" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="broker" class="layui-form-label">
+                <span class="x-red">*</span>经纪公司
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="broker" name="broker" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="representativeWork" class="layui-form-label">
+                <span class="x-red">*</span>代表作
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="representativeWork" name="representativeWork" required="" lay-verify=""
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="achievement" class="layui-form-label">
+                <span class="x-red">*</span>主要成就
+            </label>
+            <div class="layui-input-block">
+                <textarea autocomplete="off" id="achievement" name="achievement" placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="x-red">*</span>用户状态</label>
+            <div class="layui-input-inline">
+                <select name="status">
+                    @foreach (var item in EnumConfig.Status)
+                    {
+                        <option value="@item.Key.ToString()">@item.Value</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_repass" class="layui-form-label">
+            </label>
+            <button class="layui-btn" lay-filter="add" lay-submit="">
+                增加歌手
+            </button>
+        </div>
+
+    </form>
+</div>
+<script>
+layui.use(['form','layer'], function(){
+            $ = layui.jquery;
+          var form = layui.form
+          ,layer = layui.layer;
+
+          //自定义验证规则
+          form.verify({
+            nikename: function(value){
+              if(value.length < 5){
+                return '昵称至少得5个字符啊';
+              }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,repass: function(value){
+                if($('#L_pass').val()!=$('#L_repass').val()){
+                    return '两次密码不一致';
+                }
+            }
+          });
+
+          //监听提交
+          form.on('submit(add)', function(data){
+            console.log(data);
+              //发异步
+              $.post('@Url.Action("create")', data.field, function (result) {
+                  if (result.State == "ok") {
+                      layer.alert("增加成功", { icon: 6 }, function () {
+                          // 获得frame索引
+                          var index = parent.layer.getFrameIndex(window.name);
+                          //关闭当前frame
+                          parent.layer.close(index);
+                      });
+                  }
+                  else {
+                      layer.alert(result.Message, { icon: 5 }, function (index) {
+                          layer.close(index);
+                      });
+                  }
+              });
+
+
+            return false;
+          });
+
+
+        });</script>
+
+
+

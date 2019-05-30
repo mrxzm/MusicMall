@@ -37,6 +37,7 @@
                 <th>
                     <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
                 </th>
+                <th>图片</th>
                 <th>单曲名</th>
                 <th>专辑</th>
                 <th>作词</th>
@@ -46,13 +47,6 @@
                 <th>和音</th>
                 <th>乐器</th>
                 <th>发行日期</th>
-                <th>语言</th>
-                <th>时长</th>
-                <th>说明（简介）</th>
-                <th>图片</th>
-                <th>文件路径</th>
-                <th>创建时间</th>
-                <th>更新时间</th>
                 <th>状态</th>
                 <th>操作</th>
 </thead>
@@ -63,6 +57,7 @@
                 <td>
                     <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='@item.id'><i class="layui-icon">&#xe605;</i></div>
                 </td>
+                <td><img src="~/UploadFiles/@item.img" alt="" style="width: 60px; height: 60px" /></td>
                 <td>@item.name</td>
                 <td>@item.album</td>
                 <td>@item.lyrics</td>
@@ -72,12 +67,6 @@
                 <td>@item.summationTone</td>
                 <td>@item.musicalInstruments</td>
                 <td>@item.IssueDate</td>
-                <td>@item.duration</td>
-                <td>@item.explain</td>
-                <td>@item.img</td>
-                <td>@item.files</td>
-                <td>@item.createTime</td>
-                <td>@item.updateTime</td>
                 <td class="td-status">
                     @if (item.status)
                     {

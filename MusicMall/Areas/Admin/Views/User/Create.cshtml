@@ -131,7 +131,7 @@
               //发异步
               $.post('@Url.Action("create")', data.field, function (result) {
                   if (result.State == "ok") {
-                      layer.alert("增加成功", { icon: 6 }, function () {
+                      layer.alert("增加成功", { icon: 5 }, function () {
                           // 获得frame索引
                           var index = parent.layer.getFrameIndex(window.name);
                           //关闭当前frame
@@ -139,7 +139,7 @@
                       });
                   }
                   else {
-                      layer.alert(result.Message, { icon: 6 }, function (index) {
+                      layer.alert(result.Message, { icon: 5 }, function (index) {
                           layer.close(index);
                       });
                   }

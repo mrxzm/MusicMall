@@ -5,178 +5,155 @@
 
 <div class="x-body">
     <form class="layui-form">
+        <div class="layui-row">
+            <div class="layui-col-md6">
+                <div class="layui-form-item">
+                    <label for="name" class="layui-form-label">
+                        <span class="x-red">*</span>歌曲名
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="name" name="name" required="" lay-verify="name"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
 
-        <div class="layui-form-item">
-            <label for="name" class="layui-form-label">
-                <span class="x-red">*</span>歌曲名
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="name" name="name" required="" lay-verify="name"
-                       autocomplete="off" class="layui-input">
+
+                <div class="layui-form-item">
+                    <label for="album" class="layui-form-label">
+                        <span class="x-red">*</span>专辑
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="album" name="album" required="" lay-verify="album"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="lyrics" class="layui-form-label">
+                        <span class="x-red">*</span>作词
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="lyrics" name="lyrics" required="" lay-verify="lyrics"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="compose" class="layui-form-label">
+                        <span class="x-red"></span>作曲
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="compose" name="compose" required="" lay-verify="compose"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="arranger" class="layui-form-label">
+                        <span class="x-red">*</span>编曲
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="arranger" name="arranger" required="" lay-verify="arranger"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md6">
+                <div class="layui-form-item">
+                    <label for="singer" class="layui-form-label">
+                        <span class="x-red"></span>演唱者
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="singer" name="singer" required="" lay-verify="singer"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="summationTone" class="layui-form-label">
+                        <span class="x-red">*</span>和音
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="summationTone" name="summationTone" required="" lay-verify="summationTone"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="musicalInstruments" class="layui-form-label">
+                        <span class="x-red"></span>乐器
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="musicalInstruments" name="musicalInstruments" required="" lay-verify="musicalInstruments"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="IssueDate" class="layui-form-label">
+                        <span class="x-red"></span>发行日期
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="IssueDate" name="IssueDate" required="" lay-verify="IssueDate"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="language" class="layui-form-label">
+                        <span class="x-red">*</span>语言
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="language" name="language" required="" lay-verify="language"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <label for="duration" class="layui-form-label">
+                        <span class="x-red"></span>时长
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="duration" name="duration" required="" lay-verify="duration"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
             </div>
         </div>
-
-
-        <div class="layui-form-item">
-            <label for="album" class="layui-form-label">
-                <span class="x-red">*</span>专辑
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="album" name="album" required="" lay-verify="album"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label for="lyrics" class="layui-form-label">
-                <span class="x-red">*</span>作词
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="lyrics" name="lyrics" required="" lay-verify="lyrics"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label for="compose" class="layui-form-label">
-                <span class="x-red"></span>作曲
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="compose" name="compose" required="" lay-verify="compose"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label for="arranger" class="layui-form-label">
-                <span class="x-red">*</span>编曲
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="arranger" name="arranger" required="" lay-verify="arranger"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label for="singer" class="layui-form-label">
-                <span class="x-red"></span>演唱者
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="singer" name="singer" required="" lay-verify="singer"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label for="summationTone" class="layui-form-label">
-                <span class="x-red">*</span>和音
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="summationTone" name="summationTone" required="" lay-verify="summationTone"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label for="musicalInstruments" class="layui-form-label">
-                <span class="x-red"></span>乐器
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="musicalInstruments" name="musicalInstruments" required="" lay-verify="musicalInstruments"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label for="IssueDate" class="layui-form-label">
-                <span class="x-red"></span>发行日期
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="IssueDate" name="IssueDate" required="" lay-verify="IssueDate"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label for="language" class="layui-form-label">
-                <span class="x-red">*</span>语言
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="language" name="language" required="" lay-verify="language"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-
-        <div class="layui-form-item">
-            <label for="duration" class="layui-form-label">
-                <span class="x-red"></span>时长
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="duration" name="duration" required="" lay-verify="duration"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item">
-            <label for="explain" class="layui-form-label">
-                <span class="x-red">*</span>简介
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="explain" name="explain" required="" lay-verify="explain"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-
-        <div class="layui-form-item">
-            <label for="img" class="layui-form-label">
-                <span class="x-red">*</span>图片
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="img" name="img" required="" lay-verify="img"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
 
         <div class="layui-form-item">
             <label for="files" class="layui-form-label">
-                <span class="x-red"></span>文件路径
+                <span class="x-red"></span>选择歌曲图
             </label>
-            <div class="layui-input-inline">
-                <input type="text" id="files" name="files" required="" lay-verify="files"
-                       autocomplete="off" class="layui-input">
-            </div>
+            <input type="hidden" name="img" id="txt_img"/>
+            <button type="button" class="layui-btn" id="btn_img">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <img id="img" src="~/UploadFiles/images/160x160.png" style="width: 160px; height: 160px; margin-left: 20px"/>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="files" class="layui-form-label">
+                <span class="x-red"></span>选择歌曲
+            </label>
+            <input type="hidden" name="files" id="txt_music_file" />
+            <button type="button" class="layui-btn" id="btn_music_file">
+                <i class="layui-icon">&#xe67c;</i>上传歌曲
+            </button>
         </div>
 
         <div class="layui-form-item">
             <label for="explain" class="layui-form-label">
                 <span class="x-red">*</span>简介
             </label>
-            <div class="layui-input-inline">
-                <input type="text" id="explain" name="explain" required="" lay-verify="explain"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-
-        <div class="layui-form-item">
-            <label for="L_role" class="layui-form-label">
-                <span class="x-red">*</span>用户身份
-            </label>
-            <div class="layui-input-inline">
-                <select name="role">
-                    @foreach (var item in EnumConfig.Role)
-                    {
-                        <option value="@item.Key">@item.Value</option>
-                    }
-                </select>
+            <div class="layui-input-block">
+                <textarea autocomplete="off" id="explain" name="explain" placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label"><span class="x-red">*</span>用户状态</label>
+            <label class="layui-form-label"><span class="x-red">*</span>状态</label>
             <div class="layui-input-inline">
                 <select name="status">
                     @foreach (var item in EnumConfig.Status)
@@ -191,13 +168,78 @@
             <label for="L_repass" class="layui-form-label">
             </label>
             <button class="layui-btn" lay-filter="add" lay-submit="">
-                增加用户
+                增加歌曲
             </button>
         </div>
 
     </form>
-        </div>
-        <script>
+</div>
+<script>
+
+    layui.use('laydate', function () {
+        var laydate = layui.laydate;
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#IssueDate' //指定元素
+        });
+
+        //执行一个laydate实例
+        laydate.render({
+            type: "time",
+            elem: '#duration' //指定元素
+        });
+    });
+
+    layui.use('upload', function () {
+        var upload = layui.upload;
+
+        //图片上传
+        var uploadInst = upload.render({
+            elem: '#btn_img' //绑定元素
+            , accept: "images"
+            , field: "fileData"
+            , url: '@Url.Action("UpLoadFile")' //上传接口
+            , done: function (res) {
+                if (res.State == "ok") {
+                    $("#txt_img").val(res.Data);
+                    $("#img").attr("src", "~/UploadFiles/"+res.Data);
+                    layer.msg("上传成功！");
+                }
+                else {
+                    layer.alert(res.Message, { icon: 5 }, function (index) {
+                        layer.close(index);
+                    });
+                }
+            }
+            , error: function () {
+                //请求异常回调
+            }
+        });
+
+        //执行实例
+        var uploadFile = upload.render({
+            elem: '#btn_music_file' //绑定元素
+            , accept: "audio"
+            , field: "fileData"
+            , url: '@Url.Action("UpLoadFile")' //上传接口
+            , done: function (res) {
+                if (res.State == "ok") {
+                    $("#txt_music_file").val(res.Data);
+                    layer.msg("上传成功！");
+                }
+                else {
+                    layer.alert(res.Message, { icon: 5 }, function (index) {
+                        layer.close(index);
+                    });
+                }
+            }
+            , error: function () {
+                //请求异常回调
+            }
+        });
+    });
+
 layui.use(['form','layer'], function(){
             $ = layui.jquery;
           var form = layui.form
@@ -232,7 +274,7 @@ layui.use(['form','layer'], function(){
                       });
                   }
                   else {
-                      layer.alert(result.Message, { icon: 6 }, function (index) {
+                      layer.alert(result.Message, { icon: 5 }, function (index) {
                           layer.close(index);
                       });
                   }

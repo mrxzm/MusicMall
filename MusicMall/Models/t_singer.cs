@@ -18,6 +18,8 @@ namespace MusicMall.Models
         [StringLength(50)]
         public string stageName { get; set; }
 
+        public int? sex { get; set; }
+
         [StringLength(50)]
         public string nationality { get; set; }
 
@@ -28,7 +30,7 @@ namespace MusicMall.Models
         public string constellation { get; set; }
 
         [StringLength(50)]
-        public string BloodType { get; set; }
+        public string bloodType { get; set; }
 
         [StringLength(50)]
         public string height { get; set; }

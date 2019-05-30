@@ -1,6 +1,6 @@
 ﻿@using MusicMall.Models;
 @using System.Configuration;
-@model List<MusicMall.Models.t_pay>
+@model List<MusicMall.Models.t_order>
 
 @{
     ViewBag.Title = "Index";
@@ -10,9 +10,9 @@
 <div class="x-nav">
     <span class="layui-breadcrumb">
         <a href="@Url.Action("welcome", "Home")">首页</a>
-        <a href="">支付列表</a>
+        <a href="">用户列表</a>
         <a>
-            <cite>支付列表</cite>
+            <cite>用户列表</cite>
         </a>
     </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
@@ -22,7 +22,7 @@
 <div class="x-body">
     <div class="layui-row">
         <form id="screenForm" class="layui-form layui-col-md12 x-so" action="@Url.Action("index")">
-            <input type="text" name="keyword" placeholder="请输入支付类型" autocomplete="off" class="layui-input" value="@ViewBag.keyword">
+            <input type="text" name="keyword" placeholder="请输入订单编号" autocomplete="off" class="layui-input" value="@ViewBag.keyword">
             <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
         </form>
     </div>
@@ -36,11 +36,14 @@
                 <th>
                     <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
                 </th>
-                <th>价格</th>
-                <th>支付类型</th>
-                <th>支付时间</th>
+                <th>订单编号</th>
+                <th>用户姓名</th>
+                <th>用户手机号</th>
+                <th>地址</th>
+                <th>歌曲名称</th>
+                <th>歌曲作者</th>
+                <th>总价</th>
                 <th>创建时间</th>
-                <th>是否支付成功</th>
                 <th>状态</th>
                 <th>操作</th>
         </thead>
@@ -51,11 +54,14 @@
                     <td>
                         <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='@item.id'><i class="layui-icon">&#xe605;</i></div>
                     </td>
-                    <td>@item.price 元</td>
-                    <td>@item.type</td>
-                    <td>@item.payTime</td>
+                    <td>@item.orderno</td>
+                    <td>@item.userName</td>
+                    <td>@item.userPhone</td>
+                    <td>@item.country @item.province @item.city @item.area<br /> @item.address</td>
+                    <td>@item.musicName</td>
+                    <td>@item.musicUserName</td>
+                    <td>@item.total</td>
                     <td>@item.createTime</td>
-                    <td>@EnumConfig.YesNo[item.isPay]</td>
                     <td class="td-status">
                         @if (item.status)
                         {
@@ -79,7 +85,7 @@
                                 <i class="layui-icon">&#xe62f;</i>
                             </a>
                         }
-
+                        
                         <a title="删除" onclick="member_del(this,@item.id)" href="javascript:;">
                             <i class="layui-icon">&#xe640;</i>
                         </a>

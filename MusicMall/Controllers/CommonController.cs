@@ -11,6 +11,6 @@ namespace MusicMall.Controllers
     public class CommonController : Controller
     {
         // 实例化数据库上下文
-        public EF db = new EF();
+        public EfContext db = new EfContext();
     }
 }

@@ -5,10 +5,10 @@ namespace MusicMall.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class EF : DbContext
+    public partial class EfContext : DbContext
     {
-        public EF()
-            : base("name=EF")
+        public EfContext()
+            : base("name=EfContext")
         {
         }
 
