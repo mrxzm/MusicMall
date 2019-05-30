@@ -6,7 +6,7 @@
 <div class="x-body layui-anim layui-anim-up">
     <blockquote class="layui-elem-quote">
         欢迎管理员：
-        <span class="x-red">test</span>！当前时间:2018-04-25 20:50:53
+        <span class="x-red">@Session["username"]</span>！当前时间:@DateTime.Now
     </blockquote>
     <fieldset class="layui-elem-field">
         <legend>数据统计</legend>
@@ -19,17 +19,17 @@
                                 <ul class="layui-row layui-col-space10 layui-this">
                                     <li class="layui-col-xs2">
                                         <a href="javascript:;" class="x-admin-backlog-body">
-                                            <h3>今日订单金额</h3>
+                                            <h3>今日订单数量</h3>
                                             <p>
-                                                <cite>66</cite>
+                                                <cite>@ViewBag.orderCount</cite>
                                             </p>
                                         </a>
                                     </li>
                                     <li class="layui-col-xs2">
                                         <a href="javascript:;" class="x-admin-backlog-body">
-                                            <h3>今日手续费</h3>
+                                            <h3>今日订单总金额</h3>
                                             <p>
-                                                <cite>12</cite>
+                                                <cite>@ViewBag.orderMoney</cite>
                                             </p>
                                         </a>
                                     </li>
