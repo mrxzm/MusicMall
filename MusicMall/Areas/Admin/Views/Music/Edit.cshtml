@@ -10,7 +10,7 @@
         <input type="hidden" value="@Model.id" />
         <div class="layui-form-item">
             <label for="name" class="layui-form-label">
-                <span class="x-red">*</span>名称
+                <span class="x-red">*</span>歌曲名
             </label>
             <div class="layui-input-inline">
                 <input type="text" id="name" name="name" required="" lay-verify="nubmer"
@@ -22,10 +22,121 @@
         </div>
 
         <div class="layui-form-item">
+            <label for="L_album" class="layui-form-label">
+                <span class="x-red"></span>专辑
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_album" name="album" required="" lay-verify="number"
+                       autocomplete="off" class="layui-input" value="@Model.album">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_lyrics" class="layui-form-label">
+                <span class="x-red"></span>作词
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_lyrics" name="lyrics" required="" lay-verify="lyrics"
+                       autocomplete="off" class="layui-input" value="@Model.lyrics">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_compose" class="layui-form-label">
+                <span class="x-red"></span>作曲
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_compose" name="compose" required="" lay-verify="compose"
+                       autocomplete="off" class="layui-input" value="@Model.lyrics">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_arranger" class="layui-form-label">
+                <span class="x-red"></span>编曲
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_arranger" name="arranger" required="" lay-verify="arranger"
+                       autocomplete="off" class="layui-input" value="@Model.arranger">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_singer" class="layui-form-label">
+                <span class="x-red"></span>演唱者
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_singer" name="singer" required="" lay-verify="singer"
+                       autocomplete="off" class="layui-input" value="@Model.singer">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_summationTone" class="layui-form-label">
+                <span class="x-red"></span>和音
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_summationTone" name="summationTone" required="" lay-verify="summationTone"
+                       autocomplete="off" class="layui-input" value="@Model.summationTone">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_musicalInstruments" class="layui-form-label">
+                <span class="x-red"></span>乐器
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_musicalInstruments" name="musicalInstruments" required="" lay-verify="musicalInstruments"
+                       autocomplete="off" class="layui-input" value="@Model.musicalInstruments">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_IssueDate" class="layui-form-label">
+                <span class="x-red"></span>发行日期
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_IssueDate" name="IssueDate" required="" lay-verify="IssueDate"
+                       autocomplete="off" class="layui-input" value="@Model.IssueDate">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_language" class="layui-form-label">
+                <span class="x-red"></span>语言
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_language" name="language" required="" lay-verify="language"
+                       autocomplete="off" class="layui-input" value="@Model.language">
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <label for="L_duration" class="layui-form-label">
+                <span class="x-red"></span>时长
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_duration" name="duration" required="" lay-verify="duration"
+                       autocomplete="off" class="layui-input" value="@Model.duration">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="L_explain" class="layui-form-label">
+                <span class="x-red"></span>说明（简介）
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_explain" name="explain" required="" lay-verify="explain"
+                       autocomplete="off" class="layui-input" value="@Model.explain">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
             <label for="L_repass" class="layui-form-label">
             </label>
             <button class="layui-btn" lay-filter="add" lay-submit="">
-                修改用户
+                修改歌名
             </button>
         </div>
 
