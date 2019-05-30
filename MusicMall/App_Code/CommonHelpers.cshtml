@@ -8,5 +8,5 @@
 @*返回地址*@
 @helper UrlToContent(string url)
 {
-string.Format("../../Areas/Home/Content/", url);
+ @(string.Format("../../Areas/Home/Content/" + url))
 }

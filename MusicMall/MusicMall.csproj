@@ -142,6 +142,7 @@
     <Compile Include="Areas\Admin\Models\PageModel.cs" />
     <Compile Include="Areas\Admin\Views\singerController.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Home\Controllers\MusicsController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Common\Common.cs" />
     <Compile Include="Common\LinqExtend.cs" />
@@ -363,6 +364,9 @@
     <Content Include="Areas\Home\Content\fonts\FontAwesome.otf" />
     <Content Include="App_Code\CommonHelpers.cshtml" />
     <Content Include="Areas\Admin\Views\singer\Index.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\FooterPartial.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\BannerPartial.cshtml" />
+    <Content Include="Areas\Home\Views\Musics\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

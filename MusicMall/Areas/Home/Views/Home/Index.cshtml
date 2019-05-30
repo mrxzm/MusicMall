@@ -3,65 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-<div class="banner">
-    <!-- start search-->
-    <div class="search-box">
-        <div id="sb-search" class="sb-search">
-            <form>
-                <input class="sb-search-input" placeholder="回车输入歌曲名称 ..." type="search" name="search" id="search">
-                <input class="sb-search-submit" type="submit" value="">
-                <span class="sb-icon-search"> </span>
-            </form>
-        </div>
-    </div>
-    <!----search-scripts---->
-    @Scripts.Render("~/js/classie");
-    @Scripts.Render("~/js/uisearch");
-    <script>
-        new UISearch(document.getElementById('sb-search'));
-    </script>
-    <!----//search-scripts---->
-    <div class="container">
-        <div class="banner-info">
-            <h1>Music</h1>
-            <p>为你提供海量正版高品质音乐,快速的新歌速递,人性化的歌曲搜索<br>让你更快地找到喜爱的音乐 </p>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="header_bottom">
-        <div class="container">
-            <div class="logo">
-                <h2><a href="index.html">音乐商城</a></h2>
-            </div>
-            <nav class="navbar navbar-default menu" role="navigation">
-                <h3 class="nav_right"><a href="index.html">Melody</a></h3>
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav menu1">
-                            <li class="active"><a href="index.html">首页<i class="menu-border"></i></a></li>
-                            <li><a href="about.html">资讯</a></li>
-                            <li><a href="album.html">歌曲</a></li>
-                            <li><a href="artists.html">歌手</a></li>
-                            <li><a href="typography.html">我的</a></li>
-                            @*<li><a href="contact.html">Contact</a></li>*@
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div>
+@Html.Partial("BannerPartial")
 <div class="main">
     <div class="row content_top">
         <div class="col-md-3 col3">
@@ -159,7 +101,7 @@
                             <li class="s_head"></h4>凹凸世界<br>英文译名Aotu World<br> 是一部国产原创3D动画<br><br></p></li>
                             <li class="s_cart">
                                 <p class="price"> </p>
-                           </li>
+                            </li>
                             <div class="clearfix"> </div>
                         </ul>
                         <ul class="product_title">
@@ -221,7 +163,7 @@
                             <div class="clearfix"> </div>
                         </ul>
                         <ul class="product_title">
-                            <li class="s_head"><img src="../../Areas/Home/Content/images/ipod.png" class="img-responsive" alt="" /></li>
+                            <li class="s_head"><img src="@CommonHelpers.UrlToContent("images/ipod.png")" class="img-responsive" alt="" /></li>
                             <li class="s_cart"><p class="m_1">55555555555555555555555555555555555555555555555555</p></li>
                             <div class="clearfix"> </div>
                         </ul>
@@ -290,9 +232,10 @@
         </div>
         <div class="clearfix"></div>
     </div>
+
     <div class="promo">
         <div class="container">
-            <h3>Upcoming Events</h3>
+            <h3>个性推荐</h3>
             <div class="event_box">
                 <div class="event">
                     <span class="bold"><i class="fa fa-microphone"></i>New Sound Wave</span>
@@ -343,60 +286,7 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <h3>Explore More</h3>
-                <ul class="list1">
-                    <li><a href="#">Our History</a></li>
-                    <li><a href="#">All Albums</a></li>
-                    <li><a href="#">Browse Events</a></li>
-                    <li><a href="#">Products</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid">
-                <h3>Information</h3>
-                <ul class="list1">
-                    <li><a href="#">Galleries</a></li>
-                    <li><a href="#">Events Archive</a></li>
-                    <li><a href="#">Events Albums</a></li>
-                    <li><a href="#">Tour Videos</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid">
-                <h3>My Account</h3>
-                <ul class="list1">
-                    <li><a href="#">My account</a></li>
-                    <li><a href="#">Personal Information</a></li>
-                    <li><a href="#">Addresses</a></li>
-                    <li><a href="#">Discount</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid">
-                <h3>Follow Us</h3>
-                <ul class="social">
-                    <li><a href=""><i class="fa fa-facebook"> </i></a></li>
-                    <li><a href=""><i class="fa fa-twitter"> </i></a></li>
-                    <li><a href=""><i class="fa fa-pinterest"> </i></a></li>
-                    <li><a href=""><i class="fa fa-google-plus"> </i></a></li>
-                </ul>
-                <p>88888888888888888888888888888888888888888888888888888888888 euismod tincidunt</p>
-            </div>
-            <div class="footer-grid last_grid">
-                <h4>Subscribe to our Newsletter</h4>
-                <form>
-                    <input type="text" value="Your Email Address" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your Email Address';}">
-                    <input type="submit" value="Go">
-                </form>
-                <h5>Call Team<br>Ipsum available</h5>
-                <h6>1.800.258.2578</h6>
-            </div>
-        </div>
-    </div>
-    <div class="footer_bottom">
-        <div class="container">
-            <p class="copy">Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网站模板" target="_blank">网站模板</a></p>
-        </div>
-    </div>
+    
+    @Html.Partial("FooterPartial")
 </div>
 
