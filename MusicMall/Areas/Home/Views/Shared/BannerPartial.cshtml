@@ -1,0 +1,59 @@
+﻿<div class="banner">
+    <!-- start search-->
+    <div class="search-box">
+        <div id="sb-search" class="sb-search">
+            <form>
+                <input class="sb-search-input" placeholder="回车输入歌曲名称 ..." type="search" name="search" id="search">
+                <input class="sb-search-submit" type="submit" value="">
+                <span class="sb-icon-search"> </span>
+            </form>
+        </div>
+    </div>
+    <!----search-scripts---->
+    @Scripts.Render("~/js/classie");
+    @Scripts.Render("~/js/uisearch");
+    <script>
+        new UISearch(document.getElementById('sb-search'));
+    </script>
+    <!----//search-scripts---->
+    <div class="container">
+        <div class="banner-info">
+            <h1>Music</h1>
+            <p>为你提供海量正版高品质音乐,快速的新歌速递,人性化的歌曲搜索<br>让你更快地找到喜爱的音乐 </p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="header_bottom">
+        <div class="container">
+            <div class="logo">
+                <h2><a href="index.html">音乐商城</a></h2>
+            </div>
+            <nav class="navbar navbar-default menu" role="navigation">
+                <h3 class="nav_right"><a href="index.html">Melody</a></h3>
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav menu1">
+                            <li class="active"><a href="index.html">首页<i class="menu-border"></i></a></li>
+                            <li><a href="about.html">资讯</a></li>
+                            <li><a href="@Url.Action("index", "Musics")">歌曲</a></li>
+                            <li><a href="artists.html">歌手</a></li>
+                            <li><a href="typography.html">我的</a></li>
+                            @*<li><a href="contact.html">Contact</a></li>*@
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
