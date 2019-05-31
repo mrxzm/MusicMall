@@ -6,12 +6,13 @@ using System.Web.Mvc;
 
 namespace MusicMall.Areas.Home.Controllers
 {
-    public class MusicsController : Controller
+    public class MusicsController : BaseController
     {
         // GET: Home/Musics
         public ActionResult Index()
         {
-            return View();
+            var musics = db.t_music.OrderBy(o => o.createTime).Take(9).ToList();
+            return View(musics);
         }
     }
 }

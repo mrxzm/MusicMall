@@ -203,7 +203,7 @@
             , done: function (res) {
                 if (res.State == "ok") {
                     $("#txt_img").val(res.Data);
-                    $("#img").attr("src", "~/UploadFiles/"+res.Data);
+                    $("#img").attr("src", "../../UploadFiles/"+res.Data);
                     layer.msg("上传成功！");
                 }
                 else {
@@ -222,6 +222,7 @@
             elem: '#btn_music_file' //绑定元素
             , accept: "audio"
             , field: "fileData"
+            , size: 0
             , url: '@Url.Action("UpLoadFile")' //上传接口
             , done: function (res) {
                 if (res.State == "ok") {

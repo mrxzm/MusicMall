@@ -8,7 +8,6 @@ namespace MusicMall.Models
 
     public partial class t_singer
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
         [Required]
@@ -17,6 +16,9 @@ namespace MusicMall.Models
 
         [StringLength(50)]
         public string stageName { get; set; }
+
+        [StringLength(50)]
+        public string img { get; set; }
 
         public int? sex { get; set; }
 

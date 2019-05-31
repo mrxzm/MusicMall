@@ -142,8 +142,10 @@
     <Compile Include="Areas\Admin\Models\JsonData.cs" />
     <Compile Include="Areas\Admin\Models\PageModel.cs" />
     <Compile Include="Areas\Admin\Views\singerController.cs" />
+    <Compile Include="Areas\Home\Controllers\BaseController.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\Controllers\MusicsController.cs" />
+    <Compile Include="Areas\Home\Controllers\SingerController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Common\Common.cs" />
     <Compile Include="Common\LinqExtend.cs" />
@@ -370,6 +372,7 @@
     <Content Include="Areas\Home\Views\Musics\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Singer\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Home\Views\Singer\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -382,6 +385,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="UploadFiles\images\160x160.png" />
+    <Content Include="UploadFiles\musics\94407066-1-30280.mp3" />
     <Content Include="UploadFiles\videos\Av1989613.mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -401,6 +405,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Home\Models\" />
+    <Folder Include="Areas\Home\Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -22,7 +22,7 @@ namespace MusicMall.Areas.Admin.Controllers
             }
             int count = iq.Count();
             var users = iq.OrderBy(o => o.id).Skip((pageNum - 1) * pageSize).Take(pageSize).ToList();
-            
+
             ViewBag.page = new PageModel(count, pageSize, pageNum);
             return View(users);
         }

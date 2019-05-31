@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MusicMall.Areas.Home.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: Home/Home
         public ActionResult Index()

@@ -10,3 +10,8 @@
 {
  @(string.Format("../../Areas/Home/Content/" + url))
 }
+
+@helper ImageUrl(string imgName)
+{
+    @(string.Format("../UploadFiles/" + imgName))    
+}

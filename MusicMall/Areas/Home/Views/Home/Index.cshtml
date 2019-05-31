@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-6 col6">
             <div class="wrap_banner1">
-                <video src="~/UploadFiles/videos/Av1989613.mp4" controls="controls" style="height: 100%; width : 100%;">
+                <video id="video_mp4" src="~/UploadFiles/videos/Av1989613.mp4" controls="controls" muted autoplay style="height:100%; width : 100%;object-fit: fill">
                     您的浏览器不支持 video 标签。
                 </video>
                 
@@ -37,7 +37,8 @@
                             <p class="sales">¥7</p>
                             <p class="ban1_text1">凹凸世界第三季上线了！</p>
                         </div>
-                        <i class="fa fa-microphone-slash icon_2"></i>
+                        <audio id="audio" src="@CommonHelpers.ImageUrl("musics/94407066-1-30280.mp3")"></audio>
+                        <i id="btn_music1" class="fa fa-microphone-slash icon_2"></i>
                         <div class="clearfix"> </div>
                     </span>
                 </div>
@@ -137,7 +138,6 @@
                             <div class="clearfix"> </div>
                         </ul>
                         <ul class="product_title">
-                            <li class="s_head"><img src="@CommonHelpers.UrlToContent("images/mic.png")" class="img-responsive" alt="" /></li>
                             <li class="s_cart"><p class="m_1">《LOVE LIVE！school idol project》里μ's组合演唱的《Snow halation》登顶NHK评选的日本动画百年最佳动画歌曲top100.且多次入围各大歌曲大赏奖项</p></li>
                             <div class="clearfix"> </div>
                         </ul>
@@ -292,4 +292,30 @@
     
     @Html.Partial("FooterPartial")
 </div>
+<script>
+    $(function () {
+        //$("#video_mp4").play();
+        $("#video_mp4").trigger("play");
+        function playMusic() {
+            var audioEle = document.getElementById("audio");
+            audioEle.load();
+            if (audioEle.paused) { /*如果已经暂停*/
+                audioEle.play();   //播放
+            } else {
+                audioEle.pause();  //暂停
+            }
+        }
+
+        $("#btn_music1").on("click", function (event) {
+            if (event.target == event.currentTarget) {
+                $(this).toggleClass("fa-microphone-slash");
+                $(this).toggleClass("fa-music");
+                playMusic();
+                return false;
+            }
+            
+        });
+        
+    });
+</script>
 
