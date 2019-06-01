@@ -11,7 +11,8 @@ namespace MusicMall.Areas.Home.Controllers
         // GET: Home/Home
         public ActionResult Index()
         {
-            return View();
+            var musics = db.t_music.OrderBy(o => o.createTime).Take(4).ToList();
+            return View(musics);
         }
     }
 }

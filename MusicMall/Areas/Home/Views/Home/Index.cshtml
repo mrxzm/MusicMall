@@ -4,12 +4,14 @@
 }
 
 @Html.Partial("BannerPartial")
+<audio id="audio" src="@CommonHelpers.ImageUrl("musics/94407066-1-30280.mp3")"></audio>
 <div class="main">
+
     <div class="row content_top">
-        
+
         <div class="col-md-3 col3">
             <div class="wrap_banner">
-                <a href="#" class="fa-btn btn-1 btn-1e">购买单曲</a>
+                <a href="#" class="fa-btn btn-1 btn-1e" data-toggle="modal", data-target="#myModal_pay">购买单曲</a>
                 <p>选择你想要的单曲</p>
             </div>
         </div>
@@ -18,12 +20,12 @@
                 <video id="video_mp4" src="~/UploadFiles/videos/Av1989613.mp4" controls="controls" muted autoplay style="height:100%; width : 100%;object-fit: fill">
                     您的浏览器不支持 video 标签。
                 </video>
-                
+
             </div>
         </div>
         <div class="col-md-3 colast">
             <div class="wrap_banner2">
-                <a href="#" class="fa-btn btn-1 btn-1e con_but">详细信息</a>
+                <a href="javascript:;" class="fa-btn btn-1 btn-1e con_but" data-toggle="modal" data-target="#myModal">详细信息</a>
                 <p>获取歌曲<br> 的更多详细信息</p>
             </div>
         </div>
@@ -37,7 +39,6 @@
                             <p class="sales">¥7</p>
                             <p class="ban1_text1">凹凸世界第三季上线了！</p>
                         </div>
-                        <audio id="audio" src="@CommonHelpers.ImageUrl("musics/94407066-1-30280.mp3")"></audio>
                         <i id="btn_music1" class="fa fa-microphone-slash icon_2"></i>
                         <div class="clearfix"> </div>
                     </span>
@@ -55,40 +56,40 @@
                     </span>
                 </div>
             </a>
-            <div class="feature_bg">
-                <i class="fa fa-heart icon_1"></i>
-                <div class="clearfix"> </div>
-                <div class="service">
-                    <h3>Services</h3>
-                    <p> qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</p>
-                </div>
-            </div>
-            <div class="extra_wrap">
-                <div class="extra_wrap1">
-                    <ul class="gift span5">
-                        <i class="fa fa-thumbs-o-up icon_3"></i>
-                        <li class="gift_desc">
-                            <h4><a href="#">新歌榜</a></h4>
-                            <p>WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</p>
-                        </li>
+
+            @*<div class="feature_bg">
+                    <i class="fa fa-heart icon_1"></i>
+                    <div class="clearfix"> </div>
+                    <div class="service">
+                        <h3>Services</h3>
+                        <p> qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</p>
+                    </div>
+                </div>*@
+            @*<div class="extra_wrap">
+                    <div class="extra_wrap1">
+                        <ul class="gift span5">
+                            <i class="fa fa-thumbs-o-up icon_3"></i>
+                            <li class="gift_desc">
+                                <h4><a href="#">新歌榜</a></h4>
+                                <p>WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</p>
+                            </li>
+                            <div class="clearfix"></div>
+                        </ul>
+                        <ul class="gift">
+                            <i class="fa fa-calendar-o icon_3"></i>
+                            <li class="gift_desc">
+                                <h4><a href="#">Give us your Feedback</a></h4>
+                                <p>KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</p>
+                            </li>
+                            <div class="clearfix"></div>
+                        </ul>
                         <div class="clearfix"></div>
-                    </ul>
-                    <ul class="gift">
-                        <i class="fa fa-calendar-o icon_3"></i>
-                        <li class="gift_desc">
-                            <h4><a href="#">Give us your Feedback</a></h4>
-                            <p>KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</p>
-                        </li>
-                        <div class="clearfix"></div>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="but_service">
-                    <a href="#" class="btnc btn-c btn-1c">View All Services</a>
-                </div>
-            </div>
+                    </div>
+                    <div class="but_service">
+                        <a href="#" class="btnc btn-c btn-1c">View All Services</a>
+                    </div>
+                </div>*@
         </div>
-        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/">企业网站模板</a></div>
         <div class="col-md-4 bottom-grid2 ">
             <div class="bottom-grid2 bottom-mid">
                 <div class="feature_bg">
@@ -142,35 +143,35 @@
                             <div class="clearfix"> </div>
                         </ul>
                     </div>
-                    <div class="product_top">
-                        <ul class="product_title titlelast">
-                            <li class="s_head"><h3>There<br> variations<br> many</h3><br><p>hhhhhhhhhhhhhhhhhhhhhhh</p></li>
-                            <li class="s_cart">
-                                <p class="price"> </p>
-                            </li>
-                            <div class="clearfix"> </div>
-                        </ul>
-                        <ul class="product_title">
-                            <li class="s_head"><img src="@CommonHelpers.UrlToContent("images/stream.png")" class="img-responsive" alt="" /></li>
-                            <li class="s_cart"><p class="m_1">44444444444444444444444444444444444444444444444</p></li>
-                            <div class="clearfix"> </div>
-                        </ul>
-                    </div>
-                    <div class="product_top product_grid">
-                        <ul class="product_title titlelast">
-                            <li class="s_head"><h3>There<br> variations<br> many</h3><br><p>llllllllllllllllllll</p></li>
-                            <li class="s_cart">
-                                <p class="price"> </p>
-                                <a href="#" class="fa-btn1 btn-2 btn-1e1">Read more</a>
-                            </li>
-                            <div class="clearfix"> </div>
-                        </ul>
-                        <ul class="product_title">
-                            <li class="s_head"><img src="@CommonHelpers.UrlToContent("images/ipod.png")" class="img-responsive" alt="" /></li>
-                            <li class="s_cart"><p class="m_1">55555555555555555555555555555555555555555555555555</p></li>
-                            <div class="clearfix"> </div>
-                        </ul>
-                    </div>
+                    @*<div class="product_top">
+                            <ul class="product_title titlelast">
+                                <li class="s_head"><h3>There<br> variations<br> many</h3><br><p>hhhhhhhhhhhhhhhhhhhhhhh</p></li>
+                                <li class="s_cart">
+                                    <p class="price"> </p>
+                                </li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                            <ul class="product_title">
+                                <li class="s_head"><img src="@CommonHelpers.UrlToContent("images/stream.png")" class="img-responsive" alt="" /></li>
+                                <li class="s_cart"><p class="m_1">44444444444444444444444444444444444444444444444</p></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        </div>*@
+                    @*<div class="product_top product_grid">
+                            <ul class="product_title titlelast">
+                                <li class="s_head"><h3>There<br> variations<br> many</h3><br><p>llllllllllllllllllll</p></li>
+                                <li class="s_cart">
+                                    <p class="price"> </p>
+                                    <a href="#" class="fa-btn1 btn-2 btn-1e1">Read more</a>
+                                </li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                            <ul class="product_title">
+                                <li class="s_head"><img src="@CommonHelpers.UrlToContent("images/ipod.png")" class="img-responsive" alt="" /></li>
+                                <li class="s_cart"><p class="m_1">55555555555555555555555555555555555555555555555555</p></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                        </div>*@
                 </div>
             </div>
         </div>
@@ -201,37 +202,37 @@
                     位于东京都千代田区的传统高校“音乃木阪学院”，因为入读的学生人数骤减，所以正面临着废校的危机。其中九位少女为了保护她们喜爱的学校而决定成为偶像，因为只要她们成为偶像，学校的名气便会増加，而入读学生的人数也会随之上升。就这样，九位个性鲜明的少女开始朝着她们的偶像之路而努力迈进了！
                 </p>
             </div>
-            <div class="feature_bg">
-                <i class="fa fa-thumbs-up icon_1"></i>
-                <div class="clearfix"> </div>
-                <div class="service">
-                    <h3>Articles</h3>
-                    <p> Eodem modo typi, qui nunc nobis videntur.</p>
+            @*<div class="feature_bg">
+                    <i class="fa fa-thumbs-up icon_1"></i>
+                    <div class="clearfix"> </div>
+                    <div class="service">
+                        <h3>Articles</h3>
+                        <p> Eodem modo typi, qui nunc nobis videntur.</p>
+                    </div>
+                </div>*@
+            @*<div class="article_grid">
+                    <ul class="article_box">
+                        <li class="article_img"><img src="@CommonHelpers.UrlToContent("images/a1.jpg")" class="img-responsive" alt="" /></li>
+                        <li class="article_desc">
+                            <h5><a href="#">Eodem modo typi</a></h5>
+                            <p>6666666666666666666666666666666666666666666 euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p>
+                            <a href="#" class="link">Read More</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+                    <ul class="article_box">
+                        <li class="article_img"><img src="@CommonHelpers.UrlToContent("images/a2.jpg")" class="img-responsive" alt="" /></li>
+                        <li class="article_desc">
+                            <h5><a href="#">Eodem modo typi</a></h5>
+                            <p>77777777777777777777777777777777777777777777 euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p>
+                            <a href="#" class="link">Read More</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
                 </div>
-            </div>
-            <div class="article_grid">
-                <ul class="article_box">
-                    <li class="article_img"><img src="@CommonHelpers.UrlToContent("images/a1.jpg")" class="img-responsive" alt="" /></li>
-                    <li class="article_desc">
-                        <h5><a href="#">Eodem modo typi</a></h5>
-                        <p>6666666666666666666666666666666666666666666 euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p>
-                        <a href="#" class="link">Read More</a>
-                    </li>
-                    <div class="clearfix"></div>
-                </ul>
-                <ul class="article_box">
-                    <li class="article_img"><img src="@CommonHelpers.UrlToContent("images/a2.jpg")" class="img-responsive" alt="" /></li>
-                    <li class="article_desc">
-                        <h5><a href="#">Eodem modo typi</a></h5>
-                        <p>77777777777777777777777777777777777777777777 euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p>
-                        <a href="#" class="link">Read More</a>
-                    </li>
-                    <div class="clearfix"></div>
-                </ul>
-            </div>
-            <div class="but_article">
-                <a href="#" class="btnc btn-c btn-1c">View All Services</a>
-            </div>
+                <div class="but_article">
+                    <a href="#" class="btnc btn-c btn-1c">View All Services</a>
+                </div>*@
         </div>
         <div class="clearfix"></div>
     </div>
@@ -239,65 +240,91 @@
     <div class="promo">
         <div class="container">
             <h3>个性推荐</h3>
-            <div class="event_box">
-                <div class="event">
-                    <span class="bold"><i class="fa fa-microphone"></i>New Sound Wave</span>
+            @foreach (var item in Model)
+            {
+                <div class="event_box">
+                    <div class="event">
+                        <span class="bold"><i class="fa fa-microphone"></i>《@item.name》</span>
+                    </div>
+                    <div class="location">
+                        <span class="bold"><i class="fa fa-map-marker"></i>@item.singer </span> / @item.IssueDate
+                    </div>
+                    <div class="ticket">
+                        <i class="fa fa-ticket"></i><span class="bold">$125</span> / 0 Available
+                    </div>
+
+                    <div class="button-wrap"><a href="javascript:;" data-url="@item.files" class="def-button soldout auto_play">播放</a></div>
                 </div>
-                <div class="location">
-                    <span class="bold"><i class="fa fa-map-marker"></i>Contrary to </span> / 12 August 2015
-                </div>
-                <div class="ticket">
-                    <i class="fa fa-ticket"></i><span class="bold">$125</span> / 0 Available
-                </div>
-                <div class="button-wrap"><a href="#" class="def-button soldout">Sold Out</a></div>
-            </div>
-            <div class="event_box">
-                <div class="event">
-                    <span class="bold"><i class="fa fa-microphone"></i>Hammersonic</span>
-                </div>
-                <div class="location">
-                    <span class="bold"><i class="fa fa-map-marker"></i>The standard</span> / 20 October 2015
-                </div>
-                <div class="ticket">
-                    <i class="fa fa-ticket"></i><span class="bold">$200</span> / 15 Available
-                </div>
-                <div class="button-wrap"><a href="#" class="def-button">Buy Ticket</a></div>
-            </div>
-            <div class="event_box">
-                <div class="event">
-                    <span class="bold"><i class="fa fa-microphone"></i>New Sound Wave</span>
-                </div>
-                <div class="location">
-                    <span class="bold"><i class="fa fa-map-marker"></i>Majority have </span> / 22 August 2015
-                </div>
-                <div class="ticket">
-                    <i class="fa fa-ticket"></i><span class="bold">$175</span> / 0 Available
-                </div>
-                <div class="button-wrap"><a href="#" class="def-button soldout">Cancelled</a></div>
-            </div>
-            <div class="event_box">
-                <div class="event">
-                    <span class="bold"><i class="fa fa-microphone"></i>Hammersonic</span>
-                </div>
-                <div class="location">
-                    <span class="bold"><i class="fa fa-map-marker"></i>Internet tend  </span> / 02 October 2015
-                </div>
-                <div class="ticket">
-                    <i class="fa fa-ticket"></i><span class="bold">$200</span> / 15 Available
-                </div>
-                <div class="button-wrap"><a href="#" class="def-button">Buy Ticket</a></div>
-            </div>
+            }
         </div>
     </div>
-    
+    <div style=""></div>
+
+    @* 歌曲详细 *@
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h2 class="modal-title">Modal title</h2>
+                </div>
+                <div class="modal-body">
+                    <h2>Text in a modal</h2>
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                    <h2>Tooltips in a modal</h2>
+                    <p><a href="#" class="tooltips" title="" data-original-title="Tooltip">This link</a> and <a href="#" class="tooltips" title="" data-original-title="Tooltip">that link</a> should have tooltips on hover.</p>
+
+                    <hr>
+                    <h2>Overflowing text to show scroll behavior</h2>
+                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                    <p><img src="images/pic3.jpg" class="img-responsive" alt="Fountain" class="img-rounded img-responsive"></p>
+                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade" id="myModal_pay" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h2 class="modal-title">扫描二维码付款</h2>
+                </div>
+                <div class="modal-body">
+
+                    二维码
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</div>
+
     @Html.Partial("FooterPartial")
 </div>
 <script>
     $(function () {
-        //$("#video_mp4").play();
-        $("#video_mp4").trigger("play");
+
+        var audioEle = document.getElementById("audio");
+
         function playMusic() {
-            var audioEle = document.getElementById("audio");
+            
             audioEle.load();
             if (audioEle.paused) { /*如果已经暂停*/
                 audioEle.play();   //播放
@@ -306,6 +333,11 @@
             }
         }
 
+        $(".auto_play").on("click", function () {
+            var url = $(this).data("url");
+            $("#audio").attr("src","@CommonHelpers.ImageUrl("")" + url);
+            playMusic();
+        });
         $("#btn_music1").on("click", function (event) {
             if (event.target == event.currentTarget) {
                 $(this).toggleClass("fa-microphone-slash");
