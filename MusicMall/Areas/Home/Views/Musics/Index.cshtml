@@ -11,179 +11,202 @@
                 @{ int i = 0;}
                 @foreach (var item in Model)
                 {
-                <div class="col-md-4 album_5" style="margin: 3em 0 0 0;">
-                    <div class="col_1_of_2 span_1_of_2">
-                        <img src="@CommonHelpers.ImageUrl(item.img)" class="img-responsive" alt="" />
+                    <div class="col-md-4 album_5" style="margin: 3em 0 0 0;">
+                        <div class="col_1_of_2 span_1_of_2">
+                            <img src="@CommonHelpers.ImageUrl(item.img)" class="img-responsive" alt="" />
+                        </div>
+                        <div class="col_1_of_2 span_1_of_2">
+                            <h3><a href="javascript:;" data-toggle="modal", data-target="#Modal_Music">《@item.name》</a></h3>
+                            <p>作词: @item.lyrics</p>
+                            <p>作曲: @item.compose</p>
+                            <p>演唱者: @item.singer</p>
+                            <p>发行时间: @item.IssueDate</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <p class="off1">@item.explain</p>
                     </div>
-                    <div class="col_1_of_2 span_1_of_2">
-                        <h3><a href="#">《@item.name》</a></h3>
-                        <p>作词: @item.lyrics</p>
-                        <p>作曲: @item.compose</p>
-                        <p>演唱者: @item.singer</p>
-                        <p>发行时间: @item.IssueDate</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                    <p class="off1">@item.explain</p>
-                </div>
                 }
                 <div class="clearfix"> </div>
             </div>
-            
+
             @*<div class="album_2">
-                <div class="col-md-4 album_5">
-                    <ul class="music-list">
-                        <h3>Track Listing</h3>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            There are variation
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            anything embarrassing
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            Lorem Ipsum
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            looks reasonable
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            Praesent Vestibulum
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            English versions
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            craesent Vestibulum
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            traesent Vestibulum
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            fraesent Vestibulum
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4 album_5">
-                    <ul class="music-list">
-                        <h3>Track Listing</h3>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            graesent Vestibulum
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            traesent Vestibulum
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            Praesent Vestibulum
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            Praesent Vestibulum
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            therefore always
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            The standard
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            handful of model
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            Praesent Vestibulum
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            Ipsum passage
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4 album_6">
-                    <ul class="music-list">
-                        <h3>Track Listing</h3>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            embarrassing hidden
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            non-characteristic
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            Sed ut perspiciatis
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            But I must explain
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            At vero eos et
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            On the other hand
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            Praesent Vestibulum
-                        </li>
-                        <li class="skin2">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            righteous indignation
-                        </li>
-                        <li class="skin1">
-                            <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
-                            <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
-                            Praesent Vestibulum
-                        </li>
-                    </ul>
-                </div>
-                <div class="clearfix"> </div>
-            </div>*@
+                    <div class="col-md-4 album_5">
+                        <ul class="music-list">
+                            <h3>Track Listing</h3>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                There are variation
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                anything embarrassing
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                Lorem Ipsum
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                looks reasonable
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                Praesent Vestibulum
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                English versions
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                craesent Vestibulum
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                traesent Vestibulum
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                fraesent Vestibulum
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 album_5">
+                        <ul class="music-list">
+                            <h3>Track Listing</h3>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                graesent Vestibulum
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                traesent Vestibulum
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                Praesent Vestibulum
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                Praesent Vestibulum
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                therefore always
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                The standard
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                handful of model
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                Praesent Vestibulum
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                Ipsum passage
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 album_6">
+                        <ul class="music-list">
+                            <h3>Track Listing</h3>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                embarrassing hidden
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                non-characteristic
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                Sed ut perspiciatis
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                But I must explain
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                At vero eos et
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                On the other hand
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                Praesent Vestibulum
+                            </li>
+                            <li class="skin2">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                righteous indignation
+                            </li>
+                            <li class="skin1">
+                                <a class="dlw-btn1" href="#"><i class="fa fa-headphones"></i></a>
+                                <a class="dlw-btn" href="#"><i class="fa fa-music"></i></a>
+                                Praesent Vestibulum
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>*@
         </div>
     </div>
+
+    @* 歌曲详细付款 *@
+    <div class="modal fade" id="Modal_Music" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h2 class="modal-title">扫描二维码付款</h2>
+                </div>
+                <div class="modal-body" style="text-align:center">
+
+                    <img src="~/UploadFiles/images/1559448169.png" />
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+
     @Html.Partial("FooterPartial")
 </div>
 

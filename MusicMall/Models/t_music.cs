@@ -40,6 +40,9 @@ namespace MusicMall.Models
         [Required]
         public string files { get; set; }
 
+        [Column(TypeName = "money")]
+        public decimal price { get; set; }
+
         public DateTime createTime { get; set; }
 
         public DateTime updateTime { get; set; }

@@ -23,6 +23,10 @@ namespace MusicMall.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<t_music>()
+                .Property(e => e.price)
+                .HasPrecision(19, 4);
+
             modelBuilder.Entity<t_order>()
                 .Property(e => e.total)
                 .HasPrecision(19, 4);

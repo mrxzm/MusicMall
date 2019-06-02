@@ -250,7 +250,7 @@
                         <span class="bold"><i class="fa fa-map-marker"></i>@item.singer </span> / @item.IssueDate
                     </div>
                     <div class="ticket">
-                        <i class="fa fa-ticket"></i><span class="bold">$125</span> / 0 Available
+                        <i class="fa fa-ticket"></i><span class="bold">￥@item.price</span> / 0 Available
                     </div>
 
                     <div class="button-wrap"><a href="javascript:;" data-url="@item.files" class="def-button soldout auto_play">播放</a></div>
@@ -266,27 +266,29 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h2 class="modal-title">Modal title</h2>
+                    <h2 class="modal-title">【Animenz】Unravel 钢琴</h2>
                 </div>
                 <div class="modal-body">
-                    <h2>Text in a modal</h2>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-                    <h2>Tooltips in a modal</h2>
-                    <p><a href="#" class="tooltips" title="" data-original-title="Tooltip">This link</a> and <a href="#" class="tooltips" title="" data-original-title="Tooltip">that link</a> should have tooltips on hover.</p>
 
+                    <h2>Unravel 钢琴</h2>
+                    <p>自制 大家好，已经有很多人改编这首曲子了，但是没看到有人写完整版的乐谱。这首曲子是我最难的三个改编之一，需要很高的协调性。同时，这是我的一个高还原改编，还原度99.9%。</p>
+                    <p>乐谱：sheethost.com/sheet/cOgVYK</p>
+                    <p>最后宣传一下@hi骨头邀请我参与的企划，Project A ，我演奏的是第一首。大家一定要关注哟，<a href="https://www.bilibili.com/video/av1989613?from=search&seid=2038843799026000578" class="tooltips" title="" data-original-title="Tooltip">av1999133</a>。</p>
                     <hr>
-                    <h2>Overflowing text to show scroll behavior</h2>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                    <p><img src="images/pic3.jpg" class="img-responsive" alt="Fountain" class="img-rounded img-responsive"></p>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                </div>
+                    <p>如果你也使用其他社交媒体，请关注以下：</p>
+
+                    <p>微信公众号（微信店）：Animenzzz钢琴</p>
+                    <p>点击菜单栏“周边购买”即可购买乐谱、CD、实体盘等周边产品</p>
+                    <hr />
+                    <p>新浪微博：AnimenzzzA叔</p>
+                    <p>网易云音乐：Animenz</p>
+                    <p>抖音：Animenz</p>
+                    <p>美拍：AnimenzzzA叔</p>
+                    <p>淘宝店铺名：Animenz A叔官方店（店铺资质升级中）</p>
+                    <hr />
+                    <p>非常感谢你的支持和鼓励！</p>
+
+                    </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     <button type="button" class="btn btn-primary">确定</button>
@@ -295,6 +297,7 @@
         </div><!-- /.modal-dialog -->
     </div>
 
+    @* 付款信息 *@
     <div class="modal fade" id="myModal_pay" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -302,9 +305,9 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h2 class="modal-title">扫描二维码付款</h2>
                 </div>
-                <div class="modal-body">
-
-                    二维码
+                <div class="modal-body" style="text-align:center">
+                    
+                    <img src="~/UploadFiles/images/1559448169.png"/>
 
                 </div>
                 <div class="modal-footer">
